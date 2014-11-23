@@ -9,15 +9,15 @@ all : randomwalk clean
 
 randomwalk : $(OBJS)
 	@ $(CC) $(LFLAGS) $(OBJS) -O3 -o randomwalk
-	
+
 randomwalk.o : randomwalk.cxx
 	@ $(CC) $(OPTIONS) $(CFLAGS) randomwalk.cxx
-	
+
 .PHONY: clean
 
-clean : 
+clean :
 	@ \rm *.o
-	
+
 tar:
 	tar cfv randomwalk.tar randomwalk.cxx
 
